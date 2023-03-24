@@ -76,6 +76,13 @@ export default function HomeScreen(props) {
           <FlatList
             data={dataSource}
             renderItem={({item}) => (
+              <View
+                style={{
+                  flex: 1,
+                  flexDirection: 'column',
+                  margin: 1,
+                  alignItems:'center'
+                }}>
               <TouchableOpacity
                 onPress={() =>
                   props.navigation.navigate(PageName.viewScreen, {item:item})
@@ -96,11 +103,14 @@ export default function HomeScreen(props) {
                   </View>
                 </View>
               </TouchableOpacity>
+              </View>
             )}
             //Setting the number of column
             numColumns={2}
-            keyExtractor={(item, index) => index}
+            keyExtractor={(item, index) => index}A
           />
+
+
         </View>
       </SafeAreaView>
     );

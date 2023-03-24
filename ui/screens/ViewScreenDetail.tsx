@@ -34,7 +34,7 @@ export default function ViewScreenDetail(props) {
   return (
     <SafeAreaView style={styles.container2}>
       <ScrollView style={styles.scrollView}>
-        <Image source={require('../../assets/Rectangle_9.png')}/>
+        <Image source={require('../../assets/Rectangle_9.png')} style={{width:'100%'}}/>
         <SizeBox h={10}/>
 
         <View style={[{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}]}>

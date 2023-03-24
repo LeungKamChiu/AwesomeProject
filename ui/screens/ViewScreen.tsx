@@ -1,5 +1,5 @@
 import {StatusBar} from 'expo-status-bar';
-import {Text, View, Image, TouchableOpacity } from 'react-native';
+import {Text, View, Image, TouchableOpacity, Animated} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import {useState} from "react";
 import {SafeAreaView, StyleSheet} from 'react-native';
@@ -8,6 +8,7 @@ import SizeBox from "../components/SizeBox";
 import styles from '../styles/BasicTheme';
 import {AntDesign, FontAwesome, FontAwesome5} from "@expo/vector-icons";
 import {PageName} from "../utils/constant";
+import ScrollView = Animated.ScrollView;
 
 
 export default function ViewScreen(props) {
@@ -27,7 +28,9 @@ export default function ViewScreen(props) {
 
   return (
     <SafeAreaView style={styles.container2}>
-      <Image source={require('../../assets/Rectangle_9.png')} />
+      <ScrollView style={[styles.scrollView]}>
+
+      <Image source={require('../../assets/Rectangle_9.png')} style={{width:'100%'}}/>
       <SizeBox h={10}/>
       <View style={[{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}]}>
       <Text style={[styles.boldText,styles.fontSize_20]}>{props.route?.params?.item?.name}</Text>
@@ -54,19 +57,18 @@ export default function ViewScreen(props) {
 
       <SizeBox h={10}/>
       <View style={[{flexDirection: 'row', alignItems: 'center'}]}>
-      <View style={[styles.btnView]}>
         <TouchableOpacity style={styles.btn2} onPress={() => goHome()}>
           {/*<Icon size={18} name="menu" color="#fff"/>*/}
           <Text style={[styles.whireColor,
             styles.boldText, styles.fontSize_20]}>Booking Now | ${props.route?.params?.item?.price}</Text>
         </TouchableOpacity>
-      </View>
         <SizeBox w={5}/>
         <TouchableOpacity onPress={() => bookMarkFun()}>
           <AntDesign name={bookMark?"heart" : "hearto"} size={40} color={bookMark?"red" : "lightgrey"}></AntDesign>
         </TouchableOpacity>
       </View>
-
+        <SizeBox h={5}/>
+      </ScrollView>
     </SafeAreaView>
   );
 };

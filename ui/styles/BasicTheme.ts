@@ -49,7 +49,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 100,
-    // width:'100%'
+    width:'100%'
   },
   container2: {
     flex: 1,
@@ -73,7 +73,8 @@ export default StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 10,
     borderRadius: 20,
-    width: 180
+    width: 170,
+
   },
   color: {
     color: '#008FA0'
@@ -97,8 +98,7 @@ export default StyleSheet.create({
   },
   btn2: {
     backgroundColor: '#008FA0',
-    borderRadius: 4,
-    width: 300,
+    width: '80%',
     height: 52,
     justifyContent: 'center',
     alignItems: 'center',
